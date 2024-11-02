@@ -39,3 +39,4 @@
 // Q:38 What is your FYP?
 // Q:39 Did you use GenAI?
 // Q:40 Write code to find the sum of the two numbers and print their indeces?
+// Q:41 What are the types of the data? and what is object and array?
