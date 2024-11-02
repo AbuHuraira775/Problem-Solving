@@ -36,3 +36,5 @@
 // Q:35 Write code to find the same string instead of the order? like 'ali' and 'lia' are same 
 // Q:37 total 9 balls each ball weight is 1kg instead of one ball that is 1.5 kg. 
 // What are the best and worst case to find that ball?
+// Q:38 What is your FYP?
+// Q:39 Did you use GenAI?
