@@ -94,3 +94,16 @@
 
 // 25. Write the code of the Mumbling String
 // Example -> 'hello' will return 'H-Ee-Lll-Llll-Ooooo'
+
+// 26. Write the code for the Valid Parentheses
+// Example -> '(){}[]' will return true, '([)]' will return false
+
+// 27. Write the code to return the Substring Without Repeating Characters
+// Example -> 'abcabcbb' will return 'abc'
+
+// 28. Write the code for the Flatten a Deeply Nested Array
+// Example -> [1,[2],[[3],4],[5]] will return [1,2,3,4,5]
+
+// 29. Write the code for the Fibonacci Sequence 
+// Example -> 5 will return [0,1,1,2,3]
+
