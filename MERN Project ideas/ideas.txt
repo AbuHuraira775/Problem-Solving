@@ -24,6 +24,8 @@ Real-time chat between users
 
 3. Task Management Application
 
+Link: https://www.youtube.com/watch?v=3YmDEF2p8_Y
+
 Description: Build a task management tool (like Trello) for organizing tasks 
 with various statuses (e.g., To Do, In Progress, Done).
 
@@ -35,6 +37,8 @@ Due dates and priority tags for tasks
 User collaboration on boards
 
 4. Online Learning Platform
+
+Link: https://www.youtube.com/watch?v=Big_aFLmekI
 
 Description: Create an online learning platform where instructors can upload 
 courses and students can enroll, track progress, and earn certificates.
