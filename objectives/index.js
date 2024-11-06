@@ -1,15 +1,32 @@
-// 1. Write the code to find the provided string are same or not regaredless the order 
-// like 'ali' and 'lia' are same. FUnction will return true 
+// 1. Write the code to find the provided string are same or not regaredless the order
+// like 'ali' and 'lia' are same. FUnction will return true
 
-// 2. Write code to find the missing range in the Array. 
+function anagrams(str1, str2) {
+    
+  //remove whitespace and convert to lowercase
+  const formatting = (str) => str.replace(/[^\w]/g, "").toLowerCase();
+
+  // check the length of the strings
+  if (formatting(str1).length !== formatting(str2).length) return false;
+
+  // sort and compare the strings
+  return (
+    formatting(str1).split("").sort().join("") ===
+    formatting(str2).split("").sort().join("")
+  );
+}
+// anagrams("ali", "lia");
+console.log(anagrams("ali", "lia"));
+
+// 2. Write code to find the missing range in the Array.
 // Example -> [1,3,5,8] will return [2,4,6,7]
 
-// 3. Write the code to find indeces of the two elements of the array 
-// that sum equal to the provided value 
-// Example -> [1,2,3,4,5,6,7] sum=9 
+// 3. Write the code to find indeces of the two elements of the array
+// that sum equal to the provided value
+// Example -> [1,2,3,4,5,6,7] sum=9
 // it will return the indeces of teh 4 and 5 (3,4)
 
-// 4. Write the code for the Palindrome 
+// 4. Write the code for the Palindrome
 // Example -> 'madam' will return true
 
 // 5. Write the code for the fibonacci series
@@ -104,6 +121,5 @@
 // 28. Write the code for the Flatten a Deeply Nested Array
 // Example -> [1,[2],[[3],4],[5]] will return [1,2,3,4,5]
 
-// 29. Write the code for the Fibonacci Sequence 
+// 29. Write the code for the Fibonacci Sequence
 // Example -> 5 will return [0,1,1,2,3]
-
