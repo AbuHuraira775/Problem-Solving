@@ -1,25 +1,45 @@
 // 1. Write the code to find the provided string are same or not regaredless the order
 // like 'ali' and 'lia' are same. FUnction will return true
 
-function anagrams(str1, str2) {
-    
-  //remove whitespace and convert to lowercase
-  const formatting = (str) => str.replace(/[^\w]/g, "").toLowerCase();
+// function anagrams(str1, str2) {
 
-  // check the length of the strings
-  if (formatting(str1).length !== formatting(str2).length) return false;
+//   //remove whitespace and convert to lowercase
+//   const formatting = (str) => str.replace(/[^\w]/g, "").toLowerCase();
 
-  // sort and compare the strings
-  return (
-    formatting(str1).split("").sort().join("") ===
-    formatting(str2).split("").sort().join("")
-  );
-}
-// anagrams("ali", "lia");
-console.log(anagrams("ali", "lia"));
+//   // check the length of the strings
+//   if (formatting(str1).length !== formatting(str2).length) return false;
+
+//   // sort and compare the strings
+//   return (
+//     formatting(str1).split("").sort().join("") ===
+//     formatting(str2).split("").sort().join("")
+//   );
+// }
+// // anagrams("ali", "lia");
+// console.log(anagrams("ali", "lia"));
 
 // 2. Write code to find the missing range in the Array.
 // Example -> [1,3,5,8] will return [2,4,6,7]
+
+function missing(arr) {
+  let missings = [];
+  let max = arr[0];
+  console.log(max);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  for (let i = 0; i < max; i++) {
+    if (arr.indexOf(i) == -1) {
+      missings.push(i);
+    }
+  }
+  console.log(max);
+  console.log(missings);
+}
+
+missing([1, 3, 5, 8]);
 
 // 3. Write the code to find indeces of the two elements of the array
 // that sum equal to the provided value
