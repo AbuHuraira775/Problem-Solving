@@ -329,7 +329,6 @@
 // 10. Write a code to discover the anagrams in the array of the strings
 // Example -> ['listen','silent','hello','world'] will return ['listen','silent']
 
-
 // 11. Write the code to count the vowels in the string
 // Ecampe -> 'hello world' will return 3
 
@@ -405,3 +404,90 @@
 
 // 29. Write the code for the Fibonacci Sequence
 // Example -> 5 will return [0,1,1,2,3]
+
+// You are given an array of numbers. You need to write a function that removes duplicate elements from the array and returns a new array containing only the unique elements.
+
+// Example:
+// Input: [1, 2, 2, 3, 4, 4, 5]
+// Output: [1, 2, 3, 4, 5]
+
+// const input = [1, 2, 2, 3, 4, 4, 5];
+// const uniquValues = (arr)=>{
+//     const newArr = []
+
+//     for(let i=0 ; i<arr.length; i++){
+//         if(!newArr.includes(arr[i])){
+//             newArr.push(arr[i])
+//         }
+//     }
+//     return(newArr)
+// }
+// console.log(uniquValues(input))
+
+// deepseek
+// const input  = [1, 2, 2, 3, 4, 4, 5]
+// const set = (arr)=>{
+//     return [...new Set(arr)]
+// }
+// console.log(set(input))
+
+// MAP or FILTER
+// map() har element par operation karta hai.
+
+// Returned array mein har element modified hota hai.
+
+// Original array ki length aur returned array ki length same hoti hai.
+
+// filter() har element par condition check karta hai.
+
+// Returned array mein sirf woh elements hote hain jo condition ko satisfy karte hain.
+
+// Returned array ki length original array se kam ya equal ho sakti hai.
+
+// const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const modifiedArray = input.map((ele, i, arr) => {
+//   return ele * 2;
+// });
+// // console.log(modifiedArray) //isne sab be operation apply kar dya
+
+// const filteredArr = input.filter((item, i, arr) => {
+//   return (item % 2 === 0 );
+// }); // filter always return trythy values and does not update the element
+// console.log(filteredArr);
+// // map, filter, reduce, forEach, find, some, every
+
+// Find duplicates, reverse an array, merge sorted arrays
+
+// const inp = "hello world, how ARE you?"
+// const wordsArr = inp.split(' ')
+
+// const res = wordsArr.map((word)=>{
+//    return word[0].toUpperCase() + word.slice(1).toLowerCase()
+// })
+
+// console.log(res.join(' '))
+
+// Problem:
+// Ek array di gayi hai jismein numbers hain. Aapko ek function likhna hai jo array mein se second largest number find kare.
+
+// Example:
+// Input: [10, 5, 20, 8, 15]
+// Output: 15
+
+const inp = [10, 5, 20, 8,15];
+let max = inp[0];
+let secondLargest = inp[0]
+const largest = (arr) => {
+  for (i = 1; i < arr.length ; i++) {
+      if (arr[i] > max ) {
+          secondLargest = max
+          max = arr[i]
+      }
+      else if(arr[i]> secondLargest && arr[i] !== secondLargest){
+        secondLargest = arr[i]
+      }
+  }
+  return secondLargest
+};
+console.log(largest(inp));
