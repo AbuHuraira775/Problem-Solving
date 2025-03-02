@@ -41,6 +41,25 @@
 
 // missing([1, 3, 5, 8]);
 
+// const arr = [10,45];
+// let max = arr[0];
+// let missingVals = [];
+// const findVals = (arr) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i]>max) {
+//       max = arr[i];
+//     }
+//   }
+//   for (let i = 0; i < max; i++) {
+//     if (!arr.includes(i)) {
+//       missingVals.push(i);
+//     }
+//   }
+//   return missingVals
+// };
+
+// console.log(findVals(arr))
+
 // 3. Write the code to find indeces of the two elements of the array
 
 // that sum equal to the provided value
@@ -63,6 +82,21 @@
 // };
 
 // console.log(findIndeces([1, 2, 3, 4, 5, 6, 7], 9));
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 1, 2];
+// const res = [];
+// const findSum = (arr, sum) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//       if (arr[i] + arr[j] === sum) {
+//         res.push({value:arr[i] + arr[j], indeces: [i,j]})
+//       }
+//     }
+//   }
+//   return res;
+// };
+
+// console.log(findSum(arr, 4));
 
 // 4. Write the code for the Palindrome
 // Example -> 'madam' will return true
@@ -94,6 +128,19 @@
 // }
 // console.log(palindrom('a  lila '))
 
+// const palindrome = (str) => {
+//   let newStr = "";
+
+//   let length = str.split("").length;
+//   for (let i = length-1; i >= 0; i--) {
+//     newStr += str[i];
+//   }
+//   console.log(newStr);
+//   return str === newStr;
+// };
+
+// console.log(palindrome("madam"));
+
 // 5. Write the code for the fibonacci series
 // Example -> 1,1,2,3,5,8,13,21,34,55
 
@@ -105,7 +152,7 @@
 // 5. make an array of fabSeries = [1,1]
 // 6. start a loop starting from 2 till the length of the num
 // 7. push the number with sum of previous two num of the series
-// 8. like fabSeries.push([i-1]+[i-1])
+// 8. like fabSeries.push([i-1]+[i-2])
 
 // const fabonacci = (num)=>{
 //   if(num === 1) return [1]
@@ -129,6 +176,18 @@
 // };
 
 // console.log(fibonacci(5));
+
+// const fab = (num)=>{
+//   if(num === 1) return [1]
+//   if(num === 2) return [1,1]
+//   let fabSeries = [1,1]
+//   for(let i=2; i<num; i++){
+//     fabSeries.push(fabSeries[i-1]+ fabSeries[i-2])
+//   }
+//   return fabSeries
+// }
+
+// console.log(fab(5))
 // 6. Write the code reverse the string and the integer
 
 // Algo
@@ -184,6 +243,8 @@
 // };
 
 // console.log(frequencyCounter("My name is Abu Huraira"));
+
+// console.log(highestFrequency('huraira'))
 
 // // Write the code to check the number is prime or not
 // const isPrime = (num) => {
@@ -424,6 +485,95 @@
 // }
 // console.log(uniquValues(input))
 
+// fabonicci with recursion
+// function fibonacciSeries(n, series = []) {
+//   if (n <= 0) return series;
+//   if (series.length < 2) {
+//     series.push(series.length); // First two numbers: 0, 1
+//   } else {
+//     series.push(series[series.length - 1] + series[series.length - 2]);
+//   }
+//   return fibonacciSeries(n - 1, series);
+// }
+// console.log(fibonacciSeries(5));
+//30. Find duplicate elements in an array.
+
+// let deuplicate = [];
+// let seen = [];
+// const find = (arr) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (seen.includes(arr[i])) {
+//       deuplicate.push(arr[i]);
+//     } else {
+//       seen.push(arr[i]);
+//     }
+//   }
+//   return deuplicate;
+// };
+
+// // console.log(find([1, 2, 3, 4, 3]));
+
+// const fidDuplicate = ( arr)=>{
+//   let dup = []
+//   let traversed = []
+//   for(let i=0; i<arr.length; i++){
+//     if(traversed.includes(arr[i])){
+//       dup.push(arr[i])
+//     }
+//     else{
+//       traversed.push(arr[i])
+//     }
+//   }
+//   return dup
+// }
+
+// console.log(fidDuplicate([1,2,3,4,5,4,3,2]))
+
+// 31. Merge two sorted arrays without using .sort().
+// Input: arr1 = [1, 3, 5], arr2 = [2, 4, 6]
+// Output: [1, 2, 3, 4, 5, 6]
+
+// const merge = (arr1, arr2)=>{
+//   const res = [...arr1,...arr2].sort()
+//   console.log(res)
+// }
+// merge([1,2,3],[3,6,7,9,1,2])
+
+// function merge(arr1, arr2) {
+//   let mergeArray = [];
+//   let i = 0;
+//   let j = 0;
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr1[i] < arr2[j]) {
+//       mergeArray.push(arr1[i]);
+//       i++;
+//     } else {
+//       mergeArray.push(arr2[j]);
+//       j++;
+//     }
+//   }
+
+//   while (i < arr1.length) {
+//     mergeArray.push(arr1[i]);
+//     i++;
+//   }
+
+//   while (j < arr2.length) {
+//     mergeArray.push(arr2[j]);
+//     j++;
+//   }
+
+//   return mergeArray;
+// }
+
+// console.log(merge([1, 2, 3], [2, 3, 4, 6]));
+
+// 32. factorial
+// const factorial = (num) => {
+//   if (num === 0 || num === 1) return 1;
+//   return num * factorial(num - 1);
+// };
+// console.log(factorial(1));
 // deepseek
 // const input  = [1, 2, 2, 3, 4, 4, 5]
 // const set = (arr)=>{
@@ -475,19 +625,103 @@
 // Input: [10, 5, 20, 8, 15]
 // Output: 15
 
-const inp = [10, 5, 20, 8,15];
-let max = inp[0];
-let secondLargest = inp[0]
-const largest = (arr) => {
-  for (i = 1; i < arr.length ; i++) {
-      if (arr[i] > max ) {
-          secondLargest = max
-          max = arr[i]
-      }
-      else if(arr[i]> secondLargest && arr[i] !== secondLargest){
-        secondLargest = arr[i]
-      }
-  }
-  return secondLargest
-};
-console.log(largest(inp));
+// const inp = [10, 5, 20, 8,15];
+// let max = inp[0];
+// let secondLargest = inp[0]
+// const largest = (arr) => {
+//   for (i = 1; i < arr.length ; i++) {
+//       if (arr[i] > max ) {
+//           secondLargest = max
+//           max = arr[i]
+//       }
+//       else if(arr[i]> secondLargest && arr[i] !== secondLargest){
+//         secondLargest = arr[i]
+//       }
+//   }
+//   return secondLargest
+// };
+// console.log(largest(inp));
+
+// Kisi bhi number ke sare digits ka sum nikalne ka function likho.
+// Example: sumDigits(123) → 6 (1 + 2 + 3 = 6)
+
+// function sum(num) {
+//   let sum = 0;
+//   while (num > 0) {
+//     sum += num % 10;
+//     num = Math.floor(num / 10);
+//   }
+//   return sum;
+// }
+
+// console.log(sum(123347));
+
+// function sum(num) {
+//   if (num === 0) return 0;
+//   return (num % 10) + sum(Math.floor(num / 10));
+// }
+// console.log(sum(111113));
+
+// function reverse(num, newNum = 0) {
+//   if (num === 0) return newNum;
+//   const lastDigit = num % 10;
+//   const remain = Math.floor(num / 10);
+//   return reverse(remain, newNum * 10 + lastDigit);
+// }
+// console.log(reverse(123));
+
+// const fact = (num) => {
+//   if (num <= 0) return 1;
+//   return num * fact(num - 1);
+// };
+
+// console.log(fact(3));
+
+// // Check Prime Number:
+// const prime = (num, i = 2) => {
+//   if (num === 2) return true;
+//   if (num % i === 0) return false;
+//   if (i * i > num) return true;
+//   return prime(num, i+1)
+// };
+
+// console.log(prime(15));
+
+// Find Largest Number in Array:
+// const arr = [1, 2, 3, 5, 0, 9, 6, 7, 1, 2, 3];
+// let max = arr[0];
+// const findLargest = (arr, length) => {
+//   if (length === 0) return max;
+//   if (arr[length - 1] > max) {
+//     max = arr[length - 1];
+//   }
+//   return findLargest(arr, length - 1);
+// };
+// const length = arr.length;
+// console.log(findLargest(arr, length));
+
+// Fibonacci Series:
+
+// const fab = (num, i = 2, series = [1, 1]) => {
+//   if (i === num) return series;
+//   series.push(series[i - 2] + series[i - 1]);
+//   return fab(num, i + 1, series);
+// };
+// console.log(fab(4));
+
+// let sum = 0;
+// const findSum = (num) => {
+//   if (num === 0) return sum;
+//   sum += num % 10;
+//   return findSum(Math.floor(num / 10));
+// };
+// console.log(findSum(222234519));
+
+// const reverseNum = (num, newNum = 0) => {
+//   if (num === 0) return newNum / 10;
+//   const lastDigit = num % 10;
+//   newNum += lastDigit;
+//   return reverseNum(Math.floor(num / 10), newNum * 10);
+// };
+
+// console.log(reverseNum(123));
